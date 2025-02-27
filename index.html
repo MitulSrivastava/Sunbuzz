@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sunbuzz Media | Innovative SEO & Web Development</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- Font Awesome Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <!-- Google Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body class="light-theme">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+      <i class="fas fa-sun" id="light-mode"></i>
+      <i class="fas fa-moon" id="dark-mode"></i>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="index.html">
+          <span class="logo-text"
+            >SunBuzz<span class="accent">Media</span></span
+          >
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link active" href="index.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="services.html">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact.html">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link btn btn-primary" href="contact.html"
+                >Book a free call</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6 hero-text" data-aos="fade-right">
+            <h1 class="display-4 fw-bold animated-title">Elevate Your 
+              <span class="gradient-text" data-text="Digital Presence">Digital Presence</span>
+            </h1>
+            <p class="lead text-animate">
+              Strategic SEO solutions and stunning web development that drives
+              real business growth.
+            </p>
+            <div class="cta-buttons">
+              <a href="contact.html" class="btn btn-primary btn-lg">Boost Your Online Presence</a>
+              <a href="services.html" class="btn btn-outline-primary btn-lg">Explore Services</a>
+            </div>
+          </div>
+          <div class="col-lg-6 hero-image" data-aos="fade-left">
+            <img
+              src="images/Dropdown menu-amico.png"
+              alt="Digital Marketing Illustration"
+              class="img-fluid"
+            />
+          </div>
+        </div>
+      </div>
+      <div class="hero-wave">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320">
+          <path
+            fill="#ffffff"
+            fill-opacity="1"
+            d="M0,128L48,144C96,160,192,192,288,186.7C384,181,480,139,576,138.7C672,139,768,181,864,186.7C960,192,1056,160,1152,138.7C1248,117,1344,107,1392,101.3L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"
+          ></path>
+        </svg>
+      </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <h2 class="stats-title">Crafting <span class="highlight">Digital Excellence</span> for Forward-Thinking Businesses</h2>
+            <p class="stats-description">We're more than just a web development agency – we're your strategic partner in digital success. With a decade of experience crafting high-performance websites and implementing cutting-edge SEO strategies, we help businesses like yours stand out in the digital landscape.</p>
+            <ul class="features-list">
+              <li><i class="fas fa-check"></i> 10+ Years of Industry Experience</li>
+              <li><i class="fas fa-check"></i> Award-winning Design Team</li>
+              <li><i class="fas fa-check"></i> Results-driven Development Process</li>
+              <li><i class="fas fa-check"></i> Expert SEO & Performance Optimization</li>
+            </ul>
+          </div>
+          <div class="col-lg-6">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <h3>150+</h3>
+                <p>Active Clients</p>
+              </div>
+              <div class="stat-card">
+                <h3>10+</h3>
+                <p>Years Experience</p>
+              </div>
+              <div class="stat-card">
+                <h3>95%</h3>
+                <p>Client Retention</p>
+              </div>
+              <div class="stat-card">
+                <h3>24/7</h3>
+                <p>Support</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <!-- Bottom Stats Row -->
+        <div class="stats-bottom-row">
+          <div class="row g-4 mt-5">
+            <div class="col-md-3">
+              <div class="stat-card-large">
+                <h3>500+</h3>
+                <p>Websites Built</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stat-card-large">
+                <h3>95%</h3>
+                <p>Client Satisfaction</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stat-card-large">
+                <h3>300%</h3>
+                <p>Traffic Growth</p>
+              </div>
+            </div>
+            <div class="col-md-3">
+              <div class="stat-card-large">
+                <h3>50+</h3>
+                <p>Awards Won</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BusiHighlights -->
+    <section class="services-highlight">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Our <span class="highlight">Expertise</span></h2>
+          <p>Transforming businesses with innovative digital solutions</p>
+        </div>
+        <div class="row g-4">
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="service-card">
+              <div class="icon-container">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Custom Web Development</h3>
+              <p>
+                Bespoke websites tailored to your unique business needs
+              </p>
+              <a href="services.html" class="btn-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="service-card">
+              <div class="icon-container">
+                <i class="fas fa-search"></i>
+              </div>
+              <h3>SEO Optimization</h3>
+              <p>
+                Drive more organic traffic and improve search rankings
+              </p>
+              <a href="services.html" class="btn-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="service-card">
+              <div class="icon-container">
+                <i class="fas fa-mobile-alt"></i>
+              </div>
+              <h3>Mobile-First Design</h3>
+              <p>
+                Responsive websites that look great on all devices
+              </p>
+              <a href="services.html" class="btn-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+          <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="service-card">
+              <div class="icon-container">
+                <i class="fas fa-tachometer-alt"></i>
+              </div>
+              <h3>Performance Optimization</h3>
+              <p>
+                Lightning-fast websites that convert visitors into customers
+              </p>
+              <a href="services.html" class="btn-link">Learn more <i class="fas fa-arrow-right"></i></a>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="services.html" class="btn btn-outline-primary"
+            >View All Services</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <!-- Featured Projects -->
+    <section class="featured-projects">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Featured <span class="highlight">Projects</span></h2>
+          <p>Results-driven solutions for forward-thinking brands</p>
+        </div>
+        <div class="row g-4 justify-content-center">
+          <!-- First project -->
+          <div class="col-lg-4 col-md-6 order-md-1 order-lg-1" data-aos="zoom-in" data-aos-delay="100">
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="images/project1.png"
+                  alt="Project"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="project-info">
+                <a href=https://driptown.shop/
+                  ><h4>Driptown</h4></a
+                >
+                <p class="category">Web Development, Brand design</p>
+                <p class="description">
+                  A modern fintech platform with advanced user experience
+                  design.
+                </p>
+                <a href="javascript:void(0)" class="btn-link" onclick="openProjectModal({
+                  description: 'A modern fintech platform with advanced user experience design.',
+                  contribution: 'Directed the development process, implemented key features, and optimized performance.',
+                  client: 'Driptown',
+                  category: 'Web Development, Brand design',
+                  date: 'December 2023',
+                  software: ['HTML5', 'CSS3', 'JavaScript', 'React'],
+                  projectUrl: 'https:driptown.shop',
+                  stats: {
+                    leads: '200+',
+                    clients: '60+',
+                    sales: '220%'
+                  }
+                })">View Case Study <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Second project -->
+          <div class="col-lg-4 col-md-6 order-md-2 order-lg-2" data-aos="zoom-in" data-aos-delay="200">
+            <div class="project-card">
+              <div class="project-image">
+                <img
+                  src="images/project2.png"
+                  alt="Project"
+                  class="img-fluid"
+                />
+              </div>
+              <div class="project-info">
+                <a href="https://oneangelcapital.com/"><h4>One Angel Capital</h4></a>
+                <p class="category">SEO, Web Development</p>
+                <p class="description">
+                  Comprehensive SEO campaign that increased organic traffic by
+                  230%.
+                </p>
+                <a href="javascript:void(0)" class="btn-link" onclick="openProjectModal({
+                  description: 'Comprehensive SEO campaign and web development project that transformed the online presence of One Angel Capital, resulting in a 230% increase in organic traffic.',
+                  contribution: 'Led the SEO strategy, implemented technical optimizations, and developed a modern, conversion-focused website.',
+                  client: 'One Angel Capital',
+                  category: 'SEO, Web Development',
+                  date: 'November 2023',
+                  software: ['WordPress', 'SEMrush', 'Google Analytics', 'PHP', 'MySQL'],
+                  projectUrl: 'https:oneangelcapital.com/',
+                  stats: {
+                    leads: '200+',
+                    clients: '60+',
+                    sales: '220%'
+                  }
+                })">View Case Study <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Third project - will be below on tablet view -->
+          <div class="col-lg-4 col-md-8 order-md-3 order-lg-3" data-aos="zoom-in" data-aos-delay="300">
+            <div class="project-card">
+              <div class="project-image">
+                <img src="images/project3.png" alt="Project" class="img-fluid"/>
+              </div>
+              <div class="project-info">
+                <a href="https://mitulsrivastava.github.io/Mitul/"><h4>Freelancer website</h4></a>
+                <p class="category">AI chatbot</p>
+                <p class="description">A chatbot that can answer questions and help with tasks.</p>
+                <a href="javascript:void(0)" class="btn-link" onclick="openProjectModal({
+                  description: 'An innovative AI-powered chatbot integration that enhances user experience and provides instant support for website visitors.',
+                  contribution: 'Developed the AI chatbot functionality, integrated it with the website, and optimized response patterns.',
+                  client: 'Freelancer Portfolio',
+                  category: 'AI chatbot, Web Development',
+                  date: 'January 2024',
+                  software: ['JavaScript', 'OpenAI API', 'Node.js', 'Express', 'MongoDB'],
+                  projectUrl: 'https:mitulsrivastava.github.io/Mitul/'
+                })">View Case Study <i class="fas fa-arrow-right"></i></a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="text-center mt-5">
+          <a href="portfolio.html" class="btn btn-outline-primary">View All Projects</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Client <span class="highlight">Success Stories</span></h2>
+          <p>Don't just take our word for it - hear from our satisfied clients</p>
+        </div>
+        <div class="testimonial-carousel">
+          <div class="testimonial-track">
+            <!-- Testimonial 1 -->
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="client-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="client-info">
+                  <div class="client-avatar">
+                    <img src="https://ui-avatars.com/api/?name=JM&background=ffc107&color=fff" alt="JM">
+                  </div>
+                  <div class="client-details">
+                    <h4>Jason Miller</h4>
+                    <p>Real Estate Broker (Denver, CO)</p>
+                  </div>
+                </div>
+                <p class="testimonial-text">
+                    "Sunbuzz Media transformed our site! SEO ranking up, and the chatbot is a lifesaver!" 
+                </p>
+              </div>
+            </div>
+
+            <!-- Testimonial 2 -->
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="client-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="client-info">
+                  <div class="client-avatar">
+                    <img src="https://ui-avatars.com/api/?name=MC&background=ffc107&color=fff" alt="MC">
+                  </div>
+                  <div class="client-details">
+                    <h4>Michael Chen</h4>
+                    <p>CrossFit Studio Owner (Los Angeles, CA)</p>
+                  </div>
+                </div>
+                <p class="testimonial-text">
+                    "The AI chatbot boosted engagement and cut response time—best investment ever!"
+                </p>
+              </div>
+            </div>
+
+            <!-- Testimonial 3 -->
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="client-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="client-info">
+                  <div class="client-avatar">
+                    <img src="https://ui-avatars.com/api/?name=DC&background=ffc107&color=fff" alt="DC">
+                  </div>
+                  <div class="client-details">
+                    <h4>Derek Collins</h4>
+                    <p>SaaS Founder (San Francisco, CA)</p>
+                  </div>
+                </div>
+                <p class="testimonial-text">
+                    "Their technical SEO audit eliminated wasted ad spend.They increased conversions by 180% while cutting bounce rates in half."
+                </p>
+              </div>
+            </div>
+
+            <!-- Add a fourth testimonial -->
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="client-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="client-info">
+                  <div class="client-avatar">
+                    <img src="https://ui-avatars.com/api/?name=SJ&background=ffc107&color=fff" alt="SJ">
+                  </div>
+                  <div class="client-details">
+                    <h4>Sarah Johnson</h4>
+                    <p>Marketing Director (New York, NY)</p>
+                  </div>
+                </div>
+                <p class="testimonial-text">
+                    "Their data-driven approach to SEO and content strategy helped us achieve a 200% increase in organic traffic within just 4 months.!"
+                </p>
+              </div>
+            </div>
+            
+            <!-- Duplicate first testimonials for seamless loop -->
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="client-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="client-info">
+                  <div class="client-avatar">
+                    <img src="https://ui-avatars.com/api/?name=JM&background=ffc107&color=fff" alt="JM">
+                  </div>
+                  <div class="client-details">
+                    <h4>Jason Miller</h4>
+                    <p>Real Estate Broker (Denver, CO)</p>
+                  </div>
+                </div>
+                <p class="testimonial-text">
+                    "Sunbuzz Media transformed our site! SEO ranking up, and the chatbot is a lifesaver!" 
+                </p>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="client-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="client-info">
+                  <div class="client-avatar">
+                    <img src="https://ui-avatars.com/api/?name=MC&background=ffc107&color=fff" alt="MC">
+                  </div>
+                  <div class="client-details">
+                    <h4>Michael Chen</h4>
+                    <p>CrossFit Studio Owner (Los Angeles, CA)</p>
+                  </div>
+                </div>
+                <p class="testimonial-text">
+                    "The AI chatbot boosted engagement and cut response time—best investment ever!"
+                </p>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="client-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="client-info">
+                  <div class="client-avatar">
+                    <img src="https://ui-avatars.com/api/?name=DC&background=ffc107&color=fff" alt="DC">
+                  </div>
+                  <div class="client-details">
+                    <h4>Derek Collins</h4>
+                    <p>SaaS Founder (San Francisco, CA)</p>
+                  </div>
+                </div>
+                <p class="testimonial-text">
+                  "Their technical SEO audit eliminated wasted ad spend.They increased conversions by 180% while cutting bounce rates in half."
+                </p>
+              </div>
+            </div>
+            <div class="testimonial-item">
+              <div class="testimonial-content">
+                <div class="client-rating">
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                  <i class="fas fa-star"></i>
+                </div>
+                <div class="client-info">
+                  <div class="client-avatar">
+                    <img src="https://ui-avatars.com/api/?name=SJ&background=ffc107&color=fff" alt="SJ">
+                  </div>
+                  <div class="client-details">
+                    <h4>Sarah Johnson</h4>
+                    <p>Marketing Director (New York, NY)</p>
+                  </div>
+                </div>
+                <p class="testimonial-text">
+                  "Their data-driven approach to SEO and content strategy helped us achieve a 200% increase in organic traffic within just 4 months.!"
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="process-section">
+      <div class="container">
+        <div class="section-header text-center mb-5">
+          <h2>Our <span class="highlight">Process</span></h2>
+          <p>A streamlined approach to delivering exceptional results</p>
+        </div>
+        <div class="row g-4">
+          <!-- Discovery -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="100">
+            <div class="process-card">
+              <div class="process-icon">
+                <i class="fas fa-star"></i>
+              </div>
+              <h3>Discovery</h3>
+              <p>We learn about your business goals and requirements</p>
+              <div class="process-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Design -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="200">
+            <div class="process-card">
+              <div class="process-icon">
+                <i class="fas fa-pencil-ruler"></i>
+              </div>
+              <h3>Design</h3>
+              <p>Create stunning mockups and prototypes</p>
+              <div class="process-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Development -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="300">
+            <div class="process-card">
+              <div class="process-icon">
+                <i class="fas fa-code"></i>
+              </div>
+              <h3>Development</h3>
+              <p>Build your website with cutting-edge technology</p>
+              <div class="process-arrow">
+                <i class="fas fa-arrow-right"></i>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Launch -->
+          <div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="400">
+            <div class="process-card">
+              <div class="process-icon">
+                <i class="fas fa-rocket"></i>
+              </div>
+              <h3>Launch</h3>
+              <p>Deploy and optimize for maximum performance</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+      <div class="container">
+        <div class="cta-content" data-aos="zoom-in">
+          <h2>Ready to Transform Your <span>Online Presence?</span></h2>
+          <p>Let's create a website that drives real business results and sets you apart from the competition.</p>
+          <div class="cta-buttons">
+            <a href="contact.html" class="btn btn-primary">Get Free Consultation</a>
+            <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Add this after your existing sections, before the footer -->
+    <div class="project-modal" id="projectModal">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h2>Project Details</h2>
+          <button class="close-btn" onclick="closeModal()">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+        <div class="modal-body">
+          <div class="project-stats">
+            <div class="stat-item">
+              <h3>LEADS</h3>
+              <span class="stat-number">150+</span>
+              <p class="stat-label">Generated Monthly</p>
+            </div>
+            <div class="stat-item">
+              <h3>CLIENTS</h3>
+              <span class="stat-number">45+</span>
+              <p class="stat-label">Closed Deals</p>
+            </div>
+            <div class="stat-item">
+              <h3>SALES</h3>
+              <span class="stat-number">180%</span>
+              <p class="stat-label">Revenue Growth</p>
+            </div>
+          </div>
+          <div class="project-details">
+            <h3>About This Project</h3>
+            <p class="project-description"></p>
+            
+            <h3>My Contribution</h3>
+            <p class="project-contribution"></p>
+            
+            <h3>Software Used</h3>
+            <div class="software-list"></div>
+            
+            <div class="project-meta">
+              <div class="meta-item">
+                <h4>Client:</h4>
+                <p class="client-name"></p>
+              </div>
+              <div class="meta-item">
+                <h4>Category:</h4>
+                <p class="project-category"></p>
+              </div>
+              <div class="meta-item">
+                <h4>Date:</h4>
+                <p class="project-date"></p>
+              </div>
+            </div>
+            
+            <a href="#" class="btn btn-primary view-project" target="_blank">View Full Project</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-4 mb-4 mb-lg-0">
+            <div class="footer-brand">
+              <h3>SunBuzz<span>Media</span></h3>
+              <p>
+                Innovative digital solutions for modern businesses. We help
+                brands thrive in the digital landscape.
+              </p>
+              <div class="social-links">
+                <a href="#"><i class="fab fa-facebook-f"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5>Navigation</h5>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="services.html">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="contact.html">Contact</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
+            <h5>Services</h5>
+            <ul class="footer-links">
+              <li><a href="services.html">SEO Optimization</a></li>
+              <li><a href="services.html">Web Development</a></li>
+              <li><a href="services.html">UI/UX Design</a></li>
+              <li><a href="services.html">AI Chatbot</a></li>
+            </ul>
+          </div>
+          <div class="col-lg-4 col-md-4">
+            <h5>Contact Us</h5>
+            <ul class="contact-info">
+              <li>
+                <i class="fas fa-map-marker-alt"></i> New Delhi, India
+              </li>
+              <li><i class="fas fa-phone"></i> +91 9876543210</li>
+              <li><i class="fas fa-envelope"></i> info@sunbuzzmedia.com</li>
+            </ul>
+            
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>© 2025 SunBuzz Media. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+  </body>
+</html>
