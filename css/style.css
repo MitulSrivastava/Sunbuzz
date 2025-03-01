@@ -581,6 +581,24 @@ a:hover {
   color: var(--text-color);
 }
 
+.project-info .btn-link {
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  font-weight: 500;
+}
+
+.project-info .btn-link:hover {
+  color: var(--primary-dark);
+}
+
+.project-info .btn-link i {
+  margin-left: 8px;
+  transition: var(--transition);
+}
+
 .project-info a {
   color: var(--text-color);
   text-decoration: none;
