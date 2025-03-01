@@ -132,11 +132,12 @@ a:hover {
   margin: 0 10px;
   position: relative;
   padding: 8px 0;
+  transition: var(--transition);
 }
 
-/* Add color change for active nav link */
 .navbar-nav .nav-link.active {
   color: var(--primary-color);
+  font-weight: 600;
 }
 
 .navbar-nav .nav-link::after {
@@ -2161,5 +2162,125 @@ a:hover {
   /* Remove margin from last card */
   .featured-projects .project-card:last-child {
     margin-bottom: 0;
+  }
+}
+
+/* Industry Sectors Section */
+.industry-sectors {
+  padding: 80px 0;
+  background: var(--bg-color);
+  position: relative;
+}
+
+/* Remove the sector-specific styles since we're using service-card */
+@media (max-width: 991.98px) {
+  .industry-sectors .row.g-4 > [class*="col-md-3"] {
+    flex: 0 0 50%;
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .industry-sectors {
+    padding: 60px 0;
+  }
+
+  .industry-sectors .row.g-4 > [class*="col-md-3"] {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+.services-hero {
+  background: linear-gradient(
+    135deg,
+    var(--bg-color) 0%,
+    var(--bg-secondary) 100%
+  );
+  position: relative;
+  overflow: hidden;
+}
+
+.services-hero .hero-subtitle {
+  display: inline-block;
+  background: var(--primary-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 600;
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.services-hero .service-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.services-hero .highlight-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.services-hero .highlight-item i {
+  color: var(--primary-color);
+  font-size: 1.2rem;
+}
+
+.services-hero .highlight-item span {
+  font-weight: 500;
+}
+
+.services-hero .image-wrapper {
+  position: relative;
+  padding: 2rem;
+}
+
+.services-hero .floating {
+  animation: float 6s ease-in-out infinite;
+}
+
+.services-hero .shape-1,
+.services-hero .shape-2 {
+  position: absolute;
+  border-radius: 50%;
+  z-index: -1;
+}
+
+.services-hero .shape-1 {
+  width: 300px;
+  height: 300px;
+  background: var(--primary-gradient);
+  opacity: 0.1;
+  top: -50px;
+  right: -100px;
+}
+
+.services-hero .shape-2 {
+  width: 200px;
+  height: 200px;
+  background: var(--primary-gradient);
+  opacity: 0.1;
+  bottom: -30px;
+  left: -50px;
+}
+
+@media (max-width: 991.98px) {
+  .services-hero .hero-text {
+    text-align: center;
+    padding: 2rem 0;
+  }
+
+  .services-hero .service-highlights {
+    justify-content: center;
+  }
+
+  .services-hero .shape-1,
+  .services-hero .shape-2 {
+    display: none;
   }
 }
