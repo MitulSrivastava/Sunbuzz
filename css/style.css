@@ -105,33 +105,83 @@ a:hover {
   color: var(--primary-color);
 }
 
-/* Navbar Styles */
+/* Navbar and Logo Styles */
 .navbar {
-  padding: 15px 0;
-  background-color: var(--bg-color);
-  box-shadow: 0 2px 15px var(--shadow-color);
-  transition: var(--transition);
+  padding: 0.15rem 0;
+  min-height: 80px;
+  display: flex;
+  align-items: center;
+  background-color: #ffffff;
 }
 
 .navbar-brand {
   padding: 0;
+  display: flex;
+  align-items: center;
 }
 
 .logo-text {
   font-size: 24px;
   font-weight: 700;
   line-height: 40px;
-}
-
-.navbar-brand img {
-  height: 40px;
-  width: auto;
+  color: #000000; /* Default black color for light mode */
 }
 
 .logo-text .accent {
   color: var(--primary-color);
 }
 
+/* Dark theme navbar */
+.dark-theme .navbar {
+  background-color: #1a1a1a;
+}
+
+.dark-theme .logo-text {
+  color: #ffffff; /* White color for dark mode */
+}
+
+/* Add styles for navbar toggler */
+.navbar-toggler {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0.5rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: 0 0 0 0.25rem rgba(255, 255, 255, 0.25);
+}
+
+/* Light theme navbar */
+.light-theme .navbar {
+  background-color: #ffffff;
+}
+
+.light-theme .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0, 0, 0, 0.75)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Remove all transition effects */
+.navbar,
+.navbar-brand,
+.navbar-logo {
+  transition: none;
+}
+
+.navbar-brand img {
+  height: 80px;
+  width: auto;
+}
+
+.navbar-nav {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.nav-item {
+  margin: 0 0.5rem;
+}
+
+/* Navigation items styling */
 .navbar-nav .nav-link {
   color: var(--text-color);
   font-weight: 500;
@@ -141,25 +191,33 @@ a:hover {
   transition: var(--transition);
 }
 
-.navbar-nav .nav-link.active {
-  color: var(--primary-color);
+/* Active state and hover styling */
+.navbar-nav .nav-link.active,
+.navbar-nav .nav-link:hover {
+  color: var(--primary-color) !important;
   font-weight: 600;
 }
 
+/* Underline animation */
 .navbar-nav .nav-link::after {
   content: "";
   position: absolute;
   width: 0;
   height: 2px;
-  background: var(--primary-gradient);
   bottom: 0;
   left: 0;
-  transition: var(--transition);
+  background-color: var(--primary-color);
+  transition: width 0.3s ease;
 }
 
 .navbar-nav .nav-link:hover::after,
 .navbar-nav .nav-link.active::after {
   width: 100%;
+}
+
+/* Remove any default Bootstrap underlines or borders */
+.nav-link::before {
+  display: none !important;
 }
 
 .navbar-nav .btn {
@@ -2314,4 +2372,26 @@ a:hover {
   .logo-text {
     font-size: 20px;
   }
+}
+
+/* Active state styling */
+.navbar-nav .nav-link.active {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link.active::after {
+  width: 100%;
+  background-color: var(--primary-color);
+}
+
+/* Remove the scroll-based active state for the Services link */
+.navbar-nav .nav-link[href="services.html"].active {
+  color: var(--primary-color) !important;
+  font-weight: 600;
+}
+
+.navbar-nav .nav-link[href="services.html"].active::after {
+  width: 100%;
+  background-color: var(--primary-color);
 }

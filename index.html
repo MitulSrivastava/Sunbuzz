@@ -133,7 +133,9 @@
     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="container">
         <a class="navbar-brand" href="index.html">
-          <img src="images/logo.png" alt="SunBuzz Media Logo" />
+          <span class="logo-text"
+            >SunBuzz<span class="accent">Media</span></span
+          >
         </a>
         <button
           class="navbar-toggler"
@@ -163,7 +165,9 @@
             <li class="nav-item">
               <a
                 class="nav-link btn btn-primary"
-                href="https://calendly.com/contact-sunbuzzmedia/30min"
+                href="#"
+                data-bs-toggle="modal"
+                data-bs-target="#calendlyModal"
                 >Book a free call</a
               >
             </li>
@@ -189,7 +193,11 @@
                 real business growth.
               </p>
               <div class="cta-buttons">
-                <a href="contact.html" class="btn btn-primary btn-lg"
+                <a
+                  href="#"
+                  class="btn btn-primary btn-lg"
+                  data-bs-toggle="modal"
+                  data-bs-target="#calendlyModal"
                   >Boost Your Online Presence</a
                 >
                 <a href="services.html" class="btn btn-outline-primary btn-lg"
@@ -948,7 +956,11 @@
               you apart from the competition.
             </p>
             <div class="cta-buttons">
-              <a href="contact.html" class="btn btn-primary"
+              <a
+                href="#"
+                class="btn btn-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#calendlyModal"
                 >Get Free Consultation</a
               >
               <a href="#projects" class="btn btn-outline">View Our Work</a>
@@ -1114,35 +1126,87 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <!-- Custom JS -->
     <script src="js/main.js"></script>
+    <!-- Calendly Modal -->
+    <div
+      class="modal fade"
+      id="calendlyModal"
+      tabindex="-1"
+      aria-labelledby="calendlyModalLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog modal-lg modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="calendlyModalLabel">
+              Schedule a Free Consultation
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <!-- Calendly inline widget begin -->
+            <div
+              class="calendly-inline-widget"
+              data-url="https://calendly.com/contact-sunbuzzmedia/30min?primary_color=ffce09"
+              style="min-width: 320px; height: 700px"
+            ></div>
+            <script
+              type="text/javascript"
+              src="https://assets.calendly.com/assets/external/widget.js"
+              async
+            ></script>
+            <!-- Calendly inline widget end -->
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Add this before the closing body tag -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        // Get all sections that have an ID defined
-        const sections = document.querySelectorAll("section[id], article[id]");
+        const sections = document.querySelectorAll("section[id]");
+        const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
+        const homeLink = document.querySelector('.nav-link[href="#hero"]');
 
-        // Add an event listener listening for scroll
-        window.addEventListener("scroll", navHighlighter);
+        function highlightNavLink() {
+          const scrollY = window.pageYOffset;
+          const testimonialsSection = document.querySelector("#testimonials");
+          const projectsSection = document.querySelector("#projects");
 
-        function navHighlighter() {
-          // Get current scroll position
-          let scrollY = window.pageYOffset;
+          // Keep Home link active until reaching testimonials or projects section
+          if (
+            scrollY < testimonialsSection.offsetTop - 100 &&
+            scrollY < projectsSection.offsetTop - 100
+          ) {
+            homeLink.classList.add("active");
+          } else {
+            homeLink.classList.remove("active");
+          }
 
-          // Now we loop through sections to get height, top and ID values for each
-          sections.forEach((current) => {
-            const sectionHeight = current.offsetHeight;
-            const sectionTop = current.offsetTop - 100; // Adjust offset for navbar height
-            const sectionId = current.getAttribute("id");
+          sections.forEach((section) => {
+            const sectionHeight = section.offsetHeight;
+            const sectionTop = section.offsetTop - 100;
+            const sectionId = section.getAttribute("id");
 
             if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-              document
-                .querySelector(".navbar-nav a[href*=" + sectionId + "]")
-                .classList.add("active");
-            } else {
-              document
-                .querySelector(".navbar-nav a[href*=" + sectionId + "]")
-                .classList.remove("active");
+              navLinks.forEach((link) => {
+                if (link !== homeLink) {
+                  // Don't modify home link here
+                  link.classList.remove("active");
+                }
+                if (link.getAttribute("href") === `#${sectionId}`) {
+                  link.classList.add("active");
+                }
+              });
             }
           });
         }
+
+        window.addEventListener("scroll", highlightNavLink);
+        window.addEventListener("load", highlightNavLink);
       });
     </script>
   </body>
