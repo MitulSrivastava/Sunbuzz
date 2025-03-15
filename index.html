@@ -121,6 +121,31 @@
         }
       }
     </script>
+
+    <!-- Add this CSS to ensure active nav links are always yellow -->
+    <style>
+      /* Active navigation link styling */
+      .navbar-nav .nav-link.active {
+        color: var(--primary-color) !important;
+        font-weight: 600;
+      }
+
+      /* Ensure active state is maintained in both light and dark themes */
+      .dark-theme .navbar-nav .nav-link.active,
+      .light-theme .navbar-nav .nav-link.active {
+        color: var(--primary-color) !important;
+      }
+
+      /* Add a full underline under the active link */
+      .navbar-nav .nav-link.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+        margin: 3px auto 0;
+      }
+    </style>
   </head>
   <body class="dark-theme">
     <!-- Theme Toggle -->
@@ -157,7 +182,7 @@
               <a class="nav-link" href="services.html">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#projects">Portfolio</a>
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="#testimonials">Testimonials</a>
@@ -963,7 +988,7 @@
                 data-bs-target="#calendlyModal"
                 >Get Free Consultation</a
               >
-              <a href="#projects" class="btn btn-outline">View Our Work</a>
+              <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
             </div>
           </div>
         </div>
@@ -1055,7 +1080,7 @@
             <ul class="footer-links">
               <li><a href="#hero">Home</a></li>
               <li><a href="services.html">Services</a></li>
-              <li><a href="#projects">Portfolio</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
               <li><a href="#testimonials">Testimonials</a></li>
             </ul>
           </div>
@@ -1164,49 +1189,51 @@
         </div>
       </div>
     </div>
-    <!-- Add this before the closing body tag -->
+    <!-- Script to handle active navigation links -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const sections = document.querySelectorAll("section[id]");
+        // Get current page URL
+        const currentPage = window.location.pathname.split("/").pop();
+
+        // Get all nav links
         const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-        const homeLink = document.querySelector('.nav-link[href="#hero"]');
 
-        function highlightNavLink() {
-          const scrollY = window.pageYOffset;
-          const testimonialsSection = document.querySelector("#testimonials");
-          const projectsSection = document.querySelector("#projects");
+        // Remove active class from all links
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+        });
 
-          // Keep Home link active until reaching testimonials or projects section
+        // Set active class based on current page
+        navLinks.forEach((link) => {
+          const href = link.getAttribute("href");
+
+          // Check if this is the home page
           if (
-            scrollY < testimonialsSection.offsetTop - 100 &&
-            scrollY < projectsSection.offsetTop - 100
+            currentPage === "" ||
+            currentPage === "index.html" ||
+            currentPage === "/"
           ) {
-            homeLink.classList.add("active");
-          } else {
-            homeLink.classList.remove("active");
-          }
-
-          sections.forEach((section) => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 100;
-            const sectionId = section.getAttribute("id");
-
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-              navLinks.forEach((link) => {
-                if (link !== homeLink) {
-                  // Don't modify home link here
-                  link.classList.remove("active");
-                }
-                if (link.getAttribute("href") === `#${sectionId}`) {
-                  link.classList.add("active");
-                }
-              });
+            if (href === "#hero" || href === "index.html#hero") {
+              link.classList.add("active");
             }
-          });
-        }
-
-        window.addEventListener("scroll", highlightNavLink);
-        window.addEventListener("load", highlightNavLink);
+          }
+          // Check if this is the portfolio page
+          else if (currentPage === "portfolio.html") {
+            if (href === "portfolio.html") {
+              link.classList.add("active");
+            }
+          }
+          // Check if this is the services page
+          else if (currentPage === "services.html") {
+            if (href === "services.html" || href === "#hero") {
+              link.classList.add("active");
+            }
+          }
+          // For any other pages, check if the href contains the current page
+          else if (href.includes(currentPage)) {
+            link.classList.add("active");
+          }
+        });
       });
     </script>
   </body>

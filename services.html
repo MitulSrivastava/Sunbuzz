@@ -44,6 +44,31 @@
     />
     <!-- Custom CSS -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Add this CSS to ensure active nav links are always yellow -->
+    <style>
+      /* Active navigation link styling */
+      .navbar-nav .nav-link.active {
+        color: var(--primary-color) !important;
+        font-weight: 600;
+      }
+
+      /* Ensure active state is maintained in both light and dark themes */
+      .dark-theme .navbar-nav .nav-link.active,
+      .light-theme .navbar-nav .nav-link.active {
+        color: var(--primary-color) !important;
+      }
+
+      /* Add a full underline under the active link */
+      .navbar-nav .nav-link.active::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 2px;
+        background-color: var(--primary-color);
+        margin: 3px auto 0;
+      }
+    </style>
   </head>
   <body class="light-theme">
     <!-- Theme Toggle -->
@@ -77,10 +102,10 @@
               <a class="nav-link" href="index.html#hero">Home</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link active" href="services.html">Services</a>
+              <a class="nav-link active" href="#hero">Services</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="index.html#projects">Portfolio</a>
+              <a class="nav-link" href="portfolio.html">Portfolio</a>
             </li>
             <li class="nav-item">
               <a class="nav-link" href="index.html#testimonials"
@@ -327,9 +352,7 @@
                 data-bs-target="#calendlyModal"
                 >Schedule a Consultation</a
               >
-              <a href="index.html#projects" class="btn btn-outline"
-                >View Our Work</a
-              >
+              <a href="portfolio.html" class="btn btn-outline">View Our Work</a>
             </div>
           </div>
         </div>
@@ -359,10 +382,10 @@
           <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
             <h5>Navigation</h5>
             <ul class="footer-links">
-              <li><a href="#hero">Home</a></li>
-              <li><a href="services.html">Services</a></li>
-              <li><a href="#projects">Portfolio</a></li>
-              <li><a href="#testimonials">Testimonials</a></li>
+              <li><a href="index.html#hero">Home</a></li>
+              <li><a href="#hero">Services</a></li>
+              <li><a href="portfolio.html">Portfolio</a></li>
+              <li><a href="index.html#testimonials">Testimonials</a></li>
             </ul>
           </div>
           <div class="col-lg-2 col-md-4 mb-4 mb-md-0">
@@ -474,39 +497,51 @@
       </div>
     </div>
 
-    <!-- Add this before the closing body tag -->
+    <!-- Script to handle active navigation links -->
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        const sections = document.querySelectorAll("section[id]");
+        // Get current page URL
+        const currentPage = window.location.pathname.split("/").pop();
+
+        // Get all nav links
         const navLinks = document.querySelectorAll(".navbar-nav .nav-link");
-        const servicesLink = document.querySelector(
-          '.nav-link[href="services.html"]'
-        );
 
-        function highlightNavLink() {
-          const scrollY = window.pageYOffset;
+        // Remove active class from all links
+        navLinks.forEach((link) => {
+          link.classList.remove("active");
+        });
 
-          sections.forEach((section) => {
-            const sectionHeight = section.offsetHeight;
-            const sectionTop = section.offsetTop - 100;
-            const sectionId = section.getAttribute("id");
+        // Set active class based on current page
+        navLinks.forEach((link) => {
+          const href = link.getAttribute("href");
 
-            if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
-              navLinks.forEach((link) => {
-                // Don't remove active class from services link
-                if (link !== servicesLink) {
-                  link.classList.remove("active");
-                }
-                if (link.getAttribute("href") === `#${sectionId}`) {
-                  link.classList.add("active");
-                }
-              });
+          // Check if this is the home page
+          if (
+            currentPage === "" ||
+            currentPage === "index.html" ||
+            currentPage === "/"
+          ) {
+            if (href === "#hero" || href === "index.html#hero") {
+              link.classList.add("active");
             }
-          });
-        }
-
-        window.addEventListener("scroll", highlightNavLink);
-        window.addEventListener("load", highlightNavLink);
+          }
+          // Check if this is the portfolio page
+          else if (currentPage === "portfolio.html") {
+            if (href === "portfolio.html") {
+              link.classList.add("active");
+            }
+          }
+          // Check if this is the services page
+          else if (currentPage === "services.html") {
+            if (href === "services.html" || href === "#hero") {
+              link.classList.add("active");
+            }
+          }
+          // For any other pages, check if the href contains the current page
+          else if (href.includes(currentPage)) {
+            link.classList.add("active");
+          }
+        });
       });
     </script>
   </body>
