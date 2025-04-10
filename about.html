@@ -15,6 +15,7 @@
     <!-- Standard favicon - IMPORTANT for Chrome tabs -->
     <link rel="shortcut icon" type="image/png" href="images/favicon.png" />
     <!-- For IE support -->
+    <link rel="icon" type="image/x-icon" href="images/favicon.png" />
 
     <!-- For Google Search and Chrome -->
     <link rel="icon" type="image/png" href="images/favicon.png" />
@@ -164,6 +165,7 @@
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
         height: 100%;
         transition: all 0.3s ease;
+        margin-bottom: 20px;
       }
 
       .value-card:hover {
@@ -258,7 +260,8 @@
       .team-social {
         display: flex;
         justify-content: center;
-        margin-top: 15px;
+        margin-top: auto;
+        padding-top: 15px;
       }
 
       .team-social a {
@@ -313,6 +316,200 @@
         border-radius: 10px;
         overflow: hidden;
         box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Add styles for team card layout */
+      .team-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background-color: var(--card-bg);
+        border-radius: 10px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        padding: 20px;
+      }
+
+      .team-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.1);
+      }
+
+      /* Team Image Styling */
+      .team-image {
+        width: 180px;
+        height: 180px;
+        border-radius: 50%;
+        overflow: hidden;
+        margin: 0 auto 20px;
+        box-shadow: 0 10px 25px rgba(255, 206, 9, 0.2);
+        border: 4px solid var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      .team-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+      }
+
+      .team-card:hover .team-image img {
+        transform: scale(1.1);
+      }
+
+      .team-social {
+        display: flex;
+        justify-content: center;
+        margin-top: auto;
+        padding-top: 15px;
+      }
+
+      .team-social a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 45px;
+        height: 45px;
+        background: var(--bg-light);
+        border-radius: 50%;
+        color: var(--primary-color);
+        font-size: 22px;
+        margin: 0 5px;
+        transition: all 0.3s ease;
+      }
+
+      .team-social a:hover {
+        background: var(--primary-color);
+        color: var(--dark-color);
+        transform: translateY(-5px);
+      }
+
+      /* Team Section Mobile Responsiveness */
+      @media (max-width: 768px) {
+        .team-card {
+          margin-bottom: 30px;
+        }
+
+        .team-image {
+          width: 150px;
+          height: 150px;
+        }
+
+        .team-info h4 {
+          font-size: 1.2rem;
+        }
+
+        .team-info .position {
+          font-size: 0.9rem;
+        }
+
+        .team-info .team-description {
+          font-size: 0.85rem;
+        }
+
+        .team-social a {
+          width: 40px;
+          height: 40px;
+          font-size: 20px;
+        }
+
+        .values-section {
+          padding: 20px 0;
+        }
+
+        .value-card {
+          padding: 20px 15px;
+        }
+
+        .value-icon {
+          width: 60px;
+          height: 60px;
+          line-height: 60px;
+          font-size: 1.5rem;
+        }
+
+        .story-content {
+          padding: 15px;
+          margin-bottom: 30px;
+        }
+
+        .story-content .lead {
+          font-size: 1.1rem;
+        }
+
+        .story-content p {
+          font-size: 0.9rem;
+        }
+
+        .stats-grid {
+          grid-template-columns: 1fr;
+          gap: 15px;
+        }
+
+        .stat-card {
+          padding: 15px;
+        }
+
+        .stat-card h3 {
+          font-size: 1.8rem;
+        }
+
+        .stat-card p {
+          font-size: 0.9rem;
+        }
+
+        .stats-title {
+          font-size: 1.8rem;
+          margin-bottom: 20px;
+        }
+
+        .stats-description {
+          font-size: 0.9rem;
+          margin-bottom: 20px;
+        }
+
+        .features-list li {
+          font-size: 0.9rem;
+          margin-bottom: 10px;
+        }
+      }
+
+      /* Additional Mobile Optimizations */
+      @media (max-width: 576px) {
+        .hero-text {
+          text-align: center !important;
+        }
+
+        .hero-text .text-lg-start {
+          text-align: center !important;
+        }
+
+        .cta-buttons {
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          gap: 15px;
+          width: 100%;
+        }
+
+        .cta-buttons .btn {
+          width: 100%;
+          max-width: 250px;
+          margin: 0 auto;
+        }
+
+        .service-highlights {
+          justify-content: center;
+        }
+
+        .section-header h2 {
+          font-size: 1.8rem;
+        }
+
+        .section-header p {
+          font-size: 0.9rem;
+        }
       }
     </style>
   </head>
@@ -475,7 +672,7 @@
               <div class="story-image">
                 <img
                   src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60"
-                  alt="SunBuzz Media team"
+                  alt="SunBuzz Media Team"
                   class="img-fluid rounded shadow"
                 />
               </div>
@@ -661,20 +858,22 @@
               <div class="team-card">
                 <div class="team-image">
                   <img
-                    src="https://ui-avatars.com/api/?name=John+Doe&background=ffc107&color=fff&size=200"
+                    src="images/team/rohit.jpeg"
                     alt="John Doe"
                     class="img-fluid"
                   />
                 </div>
                 <div class="team-info">
                   <h4>Rohit Oraon</h4>
-                  <p class="position">Sales</p>
+                  <p class="position">Business Development</p>
                   <p class="team-description">
                     With 15+ years of experience in sales and marketing, Rohit
                     leads our sales team.
                   </p>
                   <div class="team-social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://www.linkedin.com/in/rohit-oraon-84681829/"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
                   </div>
                 </div>
               </div>
@@ -689,8 +888,8 @@
               <div class="team-card">
                 <div class="team-image">
                   <img
-                    src="https://ui-avatars.com/api/?name=Sarah+Johnson&background=ffc107&color=fff&size=200"
-                    alt="Sarah Johnson"
+                    src="images/team/chirag.png"
+                    alt="Chirag Srivastava"
                     class="img-fluid"
                   />
                 </div>
@@ -702,7 +901,11 @@
                     Chirag leads our social media team.
                   </p>
                   <div class="team-social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/chirag-shrivastava-6003041a3/"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
                   </div>
                 </div>
               </div>
@@ -726,9 +929,8 @@
                   <h4>Mitul Srivastava</h4>
                   <p class="position">Web Developer & Ai agent developer</p>
                   <p class="team-description">
-                    With a passion for clean code and technical expertise, Mitul
-                    leads our development team. drives our development team to
-                    create robust solutions.
+                    Our Web and AI Developer, crafts robust solutions with clean
+                    code and technical precision.
                   </p>
                   <div class="team-social">
                     <a
@@ -750,7 +952,7 @@
               <div class="team-card">
                 <div class="team-image">
                   <img
-                    src="https://ui-avatars.com/api/?name=Lisa+Rodriguez&background=ffc107&color=fff&size=200"
+                    src="images/team/devesh.jpeg"
                     alt="Lisa Rodriguez"
                     class="img-fluid"
                   />
@@ -763,7 +965,11 @@
                     measurable results for our clients.
                   </p>
                   <div class="team-social">
-                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a
+                      target="_blank"
+                      href="https://www.linkedin.com/in/devesh-arya-869bba215/"
+                      ><i class="fab fa-linkedin"></i
+                    ></a>
                   </div>
                 </div>
               </div>
@@ -815,7 +1021,16 @@
                   href="https://www.instagram.com/sunbuzzmedia.site?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
                   ><i class="fab fa-instagram"></i
                 ></a>
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a
+                  target="_blank"
+                  href="https://www.linkedin.com/company/sunbuzzmedia/"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+                <a
+                  target="_blank"
+                  href="https://youtube.com/@sunbuzzmediaaa?si=S6eeOp8OgCLh0OiW"
+                  ><i class="fab fa-youtube"></i
+                ></a>
               </div>
             </div>
           </div>
@@ -842,11 +1057,11 @@
             <h5>Contact Us</h5>
             <ul class="contact-info">
               <li><i class="fas fa-map-marker-alt"></i> New Delhi, India</li>
-              <li><i class="fas fa-phone"></i> +91 7058052505</li>
+              <li><i class="fas fa-phone"></i> +91 7701890895</li>
               <li>
                 <i class="fas fa-envelope"></i>
-                <a href="mailto:contact@sunbuzzmedia.com">
-                  contact@sunbuzzmedia.com
+                <a href="mailto:contact@sunbuzzmedia.site">
+                  contact@sunbuzzmedia.site
                 </a>
               </li>
             </ul>
